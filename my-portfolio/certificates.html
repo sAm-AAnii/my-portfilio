@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificates | Anif Amin</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #e0e0e0;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 30%, #3a3a3a 60%, #1a1a1a 100%);
+            background-size: 200% 200%;
+            animation: gradientShift 8s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; background: linear-gradient(135deg, #0a0a0a, #1a1a1a, #3a3a3a, #1a1a1a); }
+            25% { background-position: 50% 50%; background: linear-gradient(135deg, #1a1a1a, #2a2a2a, #c0c0c0, #2a2a2a); }
+            50% { background-position: 100% 50%; background: linear-gradient(135deg, #0a0a0a, #3a3a3a, #e0e0e0, #1a1a1a); }
+            75% { background-position: 50% 50%; background: linear-gradient(135deg, #1a1a1a, #2a2a2a, #c0c0c0, #2a2a2a); }
+            100% { background-position: 0% 50%; background: linear-gradient(135deg, #0a0a0a, #1a1a1a, #3a3a3a, #1a1a1a); }
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+        
+        .back-btn {
+            display: inline-block;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(10px);
+            color: #c0c0c0;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            margin-bottom: 2rem;
+            transition: all 0.3s;
+            border: 1px solid rgba(192,192,192,0.3);
+            font-size: 1rem;
+            font-weight: bold;
+        }
+        
+        .back-btn:hover { 
+            background: rgba(192,192,192,0.2); 
+            color: white; 
+            transform: translateX(-5px);
+        }
+        
+        h1 { font-size: 2.8rem; margin-bottom: 0.5rem; color: #c0c0c0; }
+        .subtitle { color: #87CEEB; margin-bottom: 3rem; font-size: 1.1rem; }
+        
+        .cert-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid #c0c0c0;
+            transition: all 0.3s;
+        }
+        .cert-card:hover {
+            transform: translateX(10px);
+            background: rgba(192,192,192,0.1);
+        }
+        .cert-card h3 { color: #c0c0c0; margin-bottom: 0.5rem; font-size: 1.3rem; }
+        .cert-date { color: #888; font-size: 0.9rem; margin-bottom: 0.5rem; }
+        .cert-issuer { color: #aaa; font-size: 1rem; }
+        
+        @media (max-width: 768px) {
+            .container { padding: 1rem; }
+            h1 { font-size: 2rem; }
+            .cert-card h3 { font-size: 1.1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-btn">← Back to Home</a>
+        <h1>📜 Certifications</h1>
+        <p class="subtitle">Professional certifications and achievements</p>
+
+        <div class="cert-card">
+            <h3>Data Analytics Job Simulation</h3>
+            <div class="cert-date">April 2026</div>
+            <div class="cert-issuer">Deloitte (via Forage) - Data Analysis & Forensic Technology</div>
+        </div>
+
+        <div class="cert-card">
+            <h3>Intro to Machine Learning</h3>
+            <div class="cert-date">April 2026</div>
+            <div class="cert-issuer">Kaggle</div>
+        </div>
+
+        <div class="cert-card">
+            <h3>Python with AI - Certificate of Training</h3>
+            <div class="cert-date">Jan - June 2024</div>
+            <div class="cert-issuer">PrernaGati & Technology (ISO 9001 Certified)</div>
+        </div>
+
+        <div class="cert-card">
+            <h3>Python Training Certificate</h3>
+            <div class="cert-date">July - Aug 2022 | 120+ Hours</div>
+            <div class="cert-issuer">Infowiz - A Software Solution (ISO 9001 Certified)</div>
+        </div>
+
+        <div class="cert-card">
+            <h3>Personality Development Course</h3>
+            <div class="cert-date">2022</div>
+            <div class="cert-issuer">Infowiz - A Software Solution</div>
+        </div>
+    </div>
+</body>
+</html>

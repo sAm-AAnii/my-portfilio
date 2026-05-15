@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Anif Amin</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #e0e0e0;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 30%, #3a3a3a 60%, #1a1a1a 100%);
+            background-size: 200% 200%;
+            animation: gradientShift 8s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; background: linear-gradient(135deg, #0a0a0a, #1a1a1a, #3a3a3a, #1a1a1a); }
+            25% { background-position: 50% 50%; background: linear-gradient(135deg, #1a1a1a, #2a2a2a, #c0c0c0, #2a2a2a); }
+            50% { background-position: 100% 50%; background: linear-gradient(135deg, #0a0a0a, #3a3a3a, #e0e0e0, #1a1a1a); }
+            75% { background-position: 50% 50%; background: linear-gradient(135deg, #1a1a1a, #2a2a2a, #c0c0c0, #2a2a2a); }
+            100% { background-position: 0% 50%; background: linear-gradient(135deg, #0a0a0a, #1a1a1a, #3a3a3a, #1a1a1a); }
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+        
+        .back-btn {
+            display: inline-block;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(10px);
+            color: #c0c0c0;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            margin-bottom: 2rem;
+            transition: all 0.3s;
+            border: 1px solid rgba(192,192,192,0.3);
+            font-size: 1rem;
+            font-weight: bold;
+        }
+        
+        .back-btn:hover { 
+            background: rgba(192,192,192,0.2); 
+            color: white; 
+            transform: translateX(-5px);
+        }
+        
+        h1 { font-size: 2.8rem; margin-bottom: 0.5rem; color: #c0c0c0; }
+        .subtitle { color: #87CEEB; margin-bottom: 3rem; font-size: 1.1rem; }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        .project-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s;
+            border: 1px solid rgba(192,192,192,0.2);
+        }
+        .project-card:hover {
+            transform: translateY(-10px);
+            border-color: #c0c0c0;
+            box-shadow: 0 10px 30px rgba(192,192,192,0.2);
+        }
+        .project-header {
+            background: rgba(192,192,192,0.1);
+            padding: 1.5rem;
+            border-bottom: 1px solid rgba(192,192,192,0.2);
+        }
+        .project-header h3 { color: #c0c0c0; margin-bottom: 0.5rem; font-size: 1.5rem; }
+        .project-tech { color: #888; font-size: 0.9rem; }
+        .project-content { padding: 1.5rem; }
+        .project-content p { color: #aaa; line-height: 1.6; font-size: 1rem; }
+        
+        @media (max-width: 768px) {
+            .container { padding: 1rem; }
+            h1 { font-size: 2rem; }
+            .project-header h3 { font-size: 1.2rem; }
+            .projects-grid { grid-template-columns: 1fr; }
+            .project-content p { font-size: 0.9rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-btn">← Back to Home</a>
+        <h1>🚀 My Projects</h1>
+        <p class="subtitle">Real-world projects I've built</p>
+
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>Multi-Modal AI System</h3>
+                    <div class="project-tech">Python, Machine Learning, Deep Learning</div>
+                </div>
+                <div class="project-content">
+                    <p>Built an AI system capable of processing multiple input types (text, image, etc.) for versatile real-world use. Integrated research assistance and data analysis features, enabling intelligent insights across different data formats. Implemented cross-modal understanding to support complex queries and automated analytical tasks.</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>House Price Prediction</h3>
+                    <div class="project-tech">Python, Machine Learning, Data Science</div>
+                </div>
+                <div class="project-content">
+                    <p>Developed a regression model to predict house prices based on key features like location and size. Applied data preprocessing, feature engineering, and model evaluation techniques to achieve accurate predictions.</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>Desktop Assistant</h3>
+                    <div class="project-tech">Python, JavaScript</div>
+                </div>
+                <div class="project-content">
+                    <p>Created a voice/command-based desktop assistant to automate daily tasks. Integrated features like web search, file management, and system controls for enhanced productivity.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

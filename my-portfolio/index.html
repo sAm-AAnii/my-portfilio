@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anif Amin | AI & Data Science Portfolio</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #e0e0e0;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 30%, #3a3a3a 60%, #1a1a1a 100%);
+    background-size: 200% 200%;
+    animation: gradientShift 8s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ===== FLOATING SHAPES ===== */
+.shape {
+    position: fixed;
+    z-index: 0;
+    opacity: 0.15;
+    animation: floatShape 20s infinite ease-in-out;
+    pointer-events: none;
+}
+
+@keyframes floatShape {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-50px) rotate(180deg); }
+}
+
+.shape-1 { top: 10%; left: 5%; width: 100px; height: 100px; background: #c0c0c0; clip-path: polygon(50% 0%, 0% 100%, 100% 100%); }
+.shape-2 { bottom: 15%; right: 8%; width: 150px; height: 150px; background: silver; clip-path: circle(50% at 50% 50%); }
+.shape-3 { top: 50%; left: 85%; width: 80px; height: 80px; background: #a8a8a8; clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); }
+.shape-4 { bottom: 30%; left: 10%; width: 60px; height: 60px; background: #d0d0d0; }
+.shape-5 { top: 70%; right: 20%; width: 120px; height: 120px; background: linear-gradient(135deg, #c0c0c0, #e0e0e0); }
+
+/* ===== BACKGROUND CODE ===== */
+.code {
+    position: fixed;
+    font-family: monospace;
+    font-size: 12px;
+    line-height: 1.5;
+    pointer-events: none;
+    z-index: 0;
+    white-space: nowrap;
+}
+
+/* Different positions */
+.code1 { top: 60px; right: 60px; color: rgba(0,200,255,0.35); }
+.code2 { top: 260px; right: 120px; color: rgba(0,200,255,0.25); }
+.code3 { bottom: 120px; right: 80px; color: rgba(0,200,255,0.2); }
+.code4 { top: 180px; left: 60px; color: rgba(0,200,255,0.15); }
+.code5 { bottom: 200px; left: 100px; color: rgba(0,200,255,0.12); }
+
+/* ===== RIGHT NAV BUTTONS ===== */
+.top-right-buttons {
+    position: fixed;
+    top: 70px;
+    right: 30px;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.nav-btn {
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(192,192,192,0.4);
+    border-radius: 50px;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #e0e0e0;
+    font-weight: bold;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.nav-btn:hover {
+    transform: translateX(-5px);
+    background: rgba(192,192,192,0.2);
+}
+
+/* ===== LEFT SOCIAL ICONS ===== */
+.bottom-left-social {
+    position: fixed;
+    left: 30px;
+    bottom: 60px;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 16px;
+    border-radius: 30px;
+}
+
+.social-icon {
+    font-size: 24px;
+    color: #e0e0e0;
+}
+
+/* ===== NAME ===== */
+.top-left-name {
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    z-index: 100;
+}
+
+.top-left-name h1 {
+    font-size: 44px;
+    background: linear-gradient(135deg, #4a1111, #c0c0c0);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.top-left-name p {
+    font-size: 16px;
+    color: #efe8e8;
+}
+
+/* ===== CENTER ===== */
+.center-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 100;
+}
+
+.center-profile-img {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    border: 4px solid #c0c0c0;
+}
+
+.welcome-text {
+    font-size: 36px;
+    color: #ff4444;
+    margin-top: 10px;
+}
+
+.welcome-sub {
+    font-size: 18px;
+    color: #87CEEB;
+    margin-top: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- SHAPES -->
+<div class="shape shape-1"></div>
+<div class="shape shape-2"></div>
+<div class="shape shape-3"></div>
+<div class="shape shape-4"></div>
+<div class="shape shape-5"></div>
+
+<!-- BACKGROUND CODE -->
+<div class="code code1">
+import pandas as pd<br>
+import numpy as np<br>
+df = pd.read_csv('data.csv')<br>
+df.dropna(inplace=True)
+</div>
+
+<div class="code code2">
+from sklearn.linear_model import LinearRegression<br>
+model = LinearRegression()<br>
+model.fit(X_train, y_train)<br>
+preds = model.predict(X_test)
+</div>
+
+<div class="code code3">
+import tensorflow as tf<br>
+model = tf.keras.Sequential()<br>
+model.add(Dense(128, activation='relu'))
+</div>
+
+<div class="code code4">
+import matplotlib.pyplot as plt<br>
+plt.plot(data)<br>
+plt.show()
+</div>
+
+<div class="code code5">
+from sklearn.cluster import KMeans<br>
+kmeans = KMeans(n_clusters=3)<br>
+kmeans.fit(X)
+</div>
+
+<!-- RIGHT NAV -->
+<div class="top-right-buttons">
+    <a href="education.html" class="nav-btn">🎓 Education</a>
+    <a href="certificates.html" class="nav-btn">📜 Certificates</a>
+    <a href="skills.html" class="nav-btn">⚡ Skills</a>
+    <a href="project.html" class="nav-btn">🚀 Projects</a>
+    <a href="experience.html" class="nav-btn">💼 Experience</a>
+    <a href="contact.html" class="nav-btn">📞 Contact</a>
+</div>
+
+<!-- LEFT SOCIAL -->
+<div class="bottom-left-social">
+    <a href="mailto:anifamin01@gmail.com" class="social-icon">📧</a>
+    <a href="https://linkedin.com" class="social-icon">💼</a>
+    <a href="https://github.com" class="social-icon">🐙</a>
+</div>
+
+<!-- NAME -->
+<div class="top-left-name">
+    <h1>Anif Amin</h1>
+    <p>✨ AI & Data Science Enthusiast ✨</p>
+</div>
+
+<!-- CENTER -->
+<div class="center-content">
+    <img src="images/my-image.jpg" alt="profile" class="center-profile-img">
+    <div class="welcome-text">Welcome to my portfolio</div>
+    <div class="welcome-sub">Explore my journey in AI & Data Science</div>
+</div>
+
+</body>
+</html>

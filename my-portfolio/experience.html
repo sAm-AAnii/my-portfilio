@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience & Training | Anif Amin</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #e0e0e0;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 30%, #3a3a3a 60%, #1a1a1a 100%);
+            background-size: 200% 200%;
+            animation: gradientShift 8s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; background: linear-gradient(135deg, #0a0a0a, #1a1a1a, #3a3a3a, #1a1a1a); }
+            25% { background-position: 50% 50%; background: linear-gradient(135deg, #1a1a1a, #2a2a2a, #c0c0c0, #2a2a2a); }
+            50% { background-position: 100% 50%; background: linear-gradient(135deg, #0a0a0a, #3a3a3a, #e0e0e0, #1a1a1a); }
+            75% { background-position: 50% 50%; background: linear-gradient(135deg, #1a1a1a, #2a2a2a, #c0c0c0, #2a2a2a); }
+            100% { background-position: 0% 50%; background: linear-gradient(135deg, #0a0a0a, #1a1a1a, #3a3a3a, #1a1a1a); }
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+        
+        .back-btn {
+            display: inline-block;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(10px);
+            color: #c0c0c0;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            margin-bottom: 2rem;
+            transition: all 0.3s;
+            border: 1px solid rgba(192,192,192,0.3);
+            font-size: 1rem;
+            font-weight: bold;
+        }
+        
+        .back-btn:hover { 
+            background: rgba(192,192,192,0.2); 
+            color: white; 
+            transform: translateX(-5px);
+        }
+        
+        h1 { font-size: 2.8rem; margin-bottom: 0.5rem; color: #c0c0c0; }
+        .subtitle { color: #87CEEB; margin-bottom: 3rem; font-size: 1.1rem; }
+        
+        .exp-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            padding: 1.8rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid #c0c0c0;
+            transition: all 0.3s;
+        }
+        .exp-card:hover {
+            transform: translateX(10px);
+            background: rgba(192,192,192,0.1);
+        }
+        .exp-card h3 { color: #c0c0c0; margin-bottom: 0.5rem; font-size: 1.5rem; }
+        .exp-company { color: #aaa; margin-bottom: 0.5rem; font-size: 1rem; }
+        .exp-date { color: #888; font-size: 0.9rem; margin-bottom: 1rem; }
+        .exp-list { padding-left: 1.5rem; color: #aaa; }
+        .exp-list li { margin-bottom: 0.5rem; font-size: 1rem; }
+        
+        @media (max-width: 768px) {
+            .container { padding: 1rem; }
+            h1 { font-size: 2rem; }
+            .exp-card h3 { font-size: 1.2rem; }
+            .exp-list li { font-size: 0.9rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-btn">← Back to Home</a>
+        <h1>💼 Experience & Training</h1>
+        <p class="subtitle">My professional journey and training</p>
+
+        <div class="exp-card">
+            <h3>Python with AI Trainee</h3>
+            <div class="exp-company">PrernaGati & Technology, Mohali (ISO 9001 Certified)</div>
+            <div class="exp-date">Jan 2024 - June 2024</div>
+            <ul class="exp-list">
+                <li>Completed hands-on training in Python with Artificial Intelligence</li>
+                <li>Gained practical exposure to AI concepts and real-world applications</li>
+            </ul>
+        </div>
+
+        <div class="exp-card">
+            <h3>Python Trainee</h3>
+            <div class="exp-company">Infowiz - A Software Solution, Chandigarh (ISO 9001 Certified)</div>
+            <div class="exp-date">July 2022 - Aug 2022 | 120+ Hours</div>
+            <ul class="exp-list">
+                <li>Completed intensive Python training at an ISO 9001 certified software firm</li>
+                <li>Recognized for excellent performance, hardworking attitude, and innovative approach</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
