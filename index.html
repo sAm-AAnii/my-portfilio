@@ -16,7 +16,6 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #e0e0e0;
     min-height: 100vh;
-    position: relative;
     overflow-x: hidden;
     background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 30%, #3a3a3a 60%, #1a1a1a 100%);
     background-size: 200% 200%;
@@ -29,7 +28,6 @@ body {
     100% { background-position: 0% 50%; }
 }
 
-/* ===== FLOATING SHAPES ===== */
 .shape {
     position: fixed;
     z-index: 0;
@@ -49,7 +47,10 @@ body {
 .shape-4 { bottom: 30%; left: 10%; width: 60px; height: 60px; background: #d0d0d0; }
 .shape-5 { top: 70%; right: 20%; width: 120px; height: 120px; background: linear-gradient(135deg, #c0c0c0, #e0e0e0); }
 
-/* ===== BACKGROUND CODE ===== */
+@media (max-width: 768px) {
+    .shape { display: none; }
+}
+
 .code {
     position: fixed;
     font-family: monospace;
@@ -60,14 +61,36 @@ body {
     white-space: nowrap;
 }
 
-/* Different positions */
 .code1 { top: 60px; right: 60px; color: rgba(0,200,255,0.35); }
 .code2 { top: 260px; right: 120px; color: rgba(0,200,255,0.25); }
 .code3 { bottom: 120px; right: 80px; color: rgba(0,200,255,0.2); }
 .code4 { top: 180px; left: 60px; color: rgba(0,200,255,0.15); }
 .code5 { bottom: 200px; left: 100px; color: rgba(0,200,255,0.12); }
 
-/* ===== RIGHT NAV BUTTONS ===== */
+@media (max-width: 768px) {
+    .code { display: none; }
+}
+
+.top-left-name {
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    z-index: 100;
+}
+
+.top-left-name h1 {
+    font-size: 44px;
+    background: linear-gradient(135deg, #4a1111, #c0c0c0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+.top-left-name p {
+    font-size: 16px;
+    color: #efe8e8;
+}
+
 .top-right-buttons {
     position: fixed;
     top: 70px;
@@ -88,6 +111,7 @@ body {
     font-weight: bold;
     font-size: 14px;
     transition: 0.3s;
+    white-space: nowrap;
 }
 
 .nav-btn:hover {
@@ -95,7 +119,6 @@ body {
     background: rgba(192,192,192,0.2);
 }
 
-/* ===== LEFT SOCIAL ICONS ===== */
 .bottom-left-social {
     position: fixed;
     left: 30px;
@@ -112,36 +135,21 @@ body {
 .social-icon {
     font-size: 24px;
     color: #e0e0e0;
+    text-decoration: none;
+    transition: transform 0.2s;
 }
 
-/* ===== NAME ===== */
-.top-left-name {
-    position: fixed;
-    top: 30px;
-    left: 30px;
-    z-index: 100;
+.social-icon:hover {
+    transform: scale(1.2);
 }
 
-.top-left-name h1 {
-    font-size: 44px;
-    background: linear-gradient(135deg, #4a1111, #c0c0c0);
-    -webkit-background-clip: text;
-    color: transparent;
-}
-
-.top-left-name p {
-    font-size: 16px;
-    color: #efe8e8;
-}
-
-/* ===== CENTER ===== */
 .center-content {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    z-index: 100;
+    z-index: 10;
 }
 
 .center-profile-img {
@@ -149,6 +157,7 @@ body {
     height: 280px;
     border-radius: 50%;
     border: 4px solid #c0c0c0;
+    object-fit: cover;
 }
 
 .welcome-text {
@@ -161,6 +170,108 @@ body {
     font-size: 18px;
     color: #87CEEB;
     margin-top: 10px;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+
+    .top-left-name,
+    .top-right-buttons,
+    .bottom-left-social,
+    .center-content {
+        position: static;
+        transform: none;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+
+    .top-left-name {
+        width: 100%;
+        text-align: center;
+        padding: 24px 20px 10px;
+        background: rgba(0,0,0,0.4);
+    }
+
+    .top-left-name h1 {
+        font-size: 28px;
+    }
+
+    .top-left-name p {
+        font-size: 13px;
+        margin-top: 4px;
+    }
+
+    .center-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 20px 20px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .center-profile-img {
+        width: 160px;
+        height: 160px;
+        border-width: 3px;
+    }
+
+    .welcome-text {
+        font-size: 22px;
+        margin-top: 16px;
+    }
+
+    .welcome-sub {
+        font-size: 14px;
+        margin-top: 8px;
+        padding: 0 10px;
+    }
+
+    .top-right-buttons {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        padding: 10px 20px 20px;
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .nav-btn {
+        text-align: center;
+        padding: 12px 10px;
+        font-size: 13px;
+        border-radius: 14px;
+        background: rgba(0,0,0,0.6);
+    }
+
+    .nav-btn:hover {
+        transform: scale(1.03);
+    }
+
+    .bottom-left-social {
+        flex-direction: row;
+        gap: 24px;
+        padding: 14px 28px;
+        border-radius: 40px;
+        margin: 10px 0 30px;
+        background: rgba(0,0,0,0.5);
+    }
+
+    .social-icon {
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 360px) {
+    .top-left-name h1 { font-size: 22px; }
+    .center-profile-img { width: 130px; height: 130px; }
+    .welcome-text { font-size: 18px; }
+    .top-right-buttons { grid-template-columns: 1fr; max-width: 260px; }
 }
 </style>
 </head>
@@ -181,33 +292,42 @@ import numpy as np<br>
 df = pd.read_csv('data.csv')<br>
 df.dropna(inplace=True)
 </div>
-
 <div class="code code2">
 from sklearn.linear_model import LinearRegression<br>
 model = LinearRegression()<br>
 model.fit(X_train, y_train)<br>
 preds = model.predict(X_test)
 </div>
-
 <div class="code code3">
 import tensorflow as tf<br>
 model = tf.keras.Sequential()<br>
 model.add(Dense(128, activation='relu'))
 </div>
-
 <div class="code code4">
 import matplotlib.pyplot as plt<br>
 plt.plot(data)<br>
 plt.show()
 </div>
-
 <div class="code code5">
 from sklearn.cluster import KMeans<br>
 kmeans = KMeans(n_clusters=3)<br>
 kmeans.fit(X)
 </div>
 
-<!-- RIGHT NAV -->
+<!-- NAME -->
+<div class="top-left-name">
+    <h1>Anif Amin</h1>
+    <p>✨ AI & Data Science Enthusiast ✨</p>
+</div>
+
+<!-- CENTER PROFILE -->
+<div class="center-content">
+    <img src="images/image.jpg" alt="profile" class="center-profile-img">
+    <div class="welcome-text">Welcome to my portfolio</div>
+    <div class="welcome-sub">Explore my journey in AI & Data Science</div>
+</div>
+
+<!-- NAV BUTTONS -->
 <div class="top-right-buttons">
     <a href="education.html" class="nav-btn">🎓 Education</a>
     <a href="certificates.html" class="nav-btn">📜 Certificates</a>
@@ -217,24 +337,11 @@ kmeans.fit(X)
     <a href="contact.html" class="nav-btn">📞 Contact</a>
 </div>
 
-<!-- LEFT SOCIAL -->
+<!-- SOCIAL ICONS -->
 <div class="bottom-left-social">
     <a href="mailto:anifamin01@gmail.com" class="social-icon">📧</a>
     <a href="https://linkedin.com" class="social-icon">💼</a>
     <a href="https://github.com" class="social-icon">🐙</a>
-</div>
-
-<!-- NAME -->
-<div class="top-left-name">
-    <h1>Anif Amin</h1>
-    <p>✨ AI & Data Science Enthusiast ✨</p>
-</div>
-
-<!-- CENTER -->
-<div class="center-content">
-    <img src="images/image.jpg" alt="profile" class="center-profile-img">
-    <div class="welcome-text">Welcome to my portfolio</div>
-    <div class="welcome-sub">Explore my journey in AI & Data Science</div>
 </div>
 
 </body>
