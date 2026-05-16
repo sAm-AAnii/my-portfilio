@@ -309,7 +309,7 @@ body {
     margin-top: 10px;
 }
 
-/* ===== DOWNLOAD RESUME LINK - FIXED ===== */
+/* ===== DOWNLOAD RESUME LINK ===== */
 .download-resume {
     display: inline-flex;
     align-items: center;
@@ -323,10 +323,6 @@ body {
     position: relative;
     padding-bottom: 4px;
     transition: color 0.3s ease;
-    cursor: pointer;
-    background: none;
-    border: none;
-    font-family: inherit;
 }
 
 .download-resume::after {
@@ -562,8 +558,8 @@ print(df_clean.shape)
     <div class="welcome-text">Welcome to my portfolio</div>
     <div class="welcome-sub">Explore my journey in AI & Data Science</div>
 
-    <!-- DOWNLOAD RESUME LINK - FIXED with capital R and download attribute -->
-    <a href="images/Resume.pdf" class="download-resume" download="Anif_Amin_Resume.pdf">
+    <!-- DOWNLOAD RESUME LINK - USING FULL RAW URL (MOST RELIABLE) -->
+    <a href="https://raw.githubusercontent.com/aanif001/my-portfolio/main/images/Resume.pdf" class="download-resume" download="Anif_Amin_Resume.pdf">
         Download Resume
         <span class="arrow-icon">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ff4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
